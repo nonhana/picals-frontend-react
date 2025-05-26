@@ -1,12 +1,12 @@
 import type { FC } from 'react'
+import { use, useEffect, useState } from 'react'
 import { getUserLikeWorksTotalAPI } from '@/apis'
 import WorkList from '@/components/personal-center/work-list'
-import { useContext, useEffect, useState } from 'react'
 
 import { PersonalContext } from '..'
 
 const MyLikes: FC = () => {
-  const { userId } = useContext(PersonalContext)
+  const { userId } = use(PersonalContext)
 
   const [workCount, setWorkCount] = useState<number>(0)
 

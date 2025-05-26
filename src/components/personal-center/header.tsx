@@ -1,6 +1,12 @@
+import type { FC } from 'react'
 import type { AppState } from '@/store/types'
 import type { UserDetailInfo } from '@/utils/types'
-import type { FC } from 'react'
+import { Icon } from '@iconify/react'
+import { Button, message } from 'antd'
+import { use, useEffect, useState } from 'react'
+import { PhotoView } from 'react-photo-view'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate, useSearchParams } from 'react-router'
 import { getUserDetailAPI, userActionsAPI } from '@/apis'
 import { PersonalContext } from '@/pages/personal-center'
 import {
@@ -8,12 +14,6 @@ import {
   increaseFollowNum,
   setUserInfo as setLocalUserInfo,
 } from '@/store/modules/user'
-import { Icon } from '@iconify/react'
-import { Button, message } from 'antd'
-import { useContext, useEffect, useState } from 'react'
-import { PhotoView } from 'react-photo-view'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate, useSearchParams } from 'react-router'
 
 import HanaViewer from '../common/hana-viewer'
 import EditModal from './edit-modal'
@@ -24,7 +24,7 @@ const Header: FC = () => {
   const type = useSearchParams()[0].get('type')
 
   const { isLogin } = useSelector((state: AppState) => state.user)
-  const { isMe, userId } = useContext(PersonalContext)
+  const { isMe, userId } = use(PersonalContext)
 
   const [userInfo, setUserInfo] = useState<UserDetailInfo>({
     id: '',

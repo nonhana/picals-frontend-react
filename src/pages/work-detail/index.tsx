@@ -1,6 +1,13 @@
+import type { FC } from 'react'
 import type { AppState } from '@/store/types'
 import type { UserItemInfo, WorkDetailInfo, WorkNormalItemInfo } from '@/utils/types'
-import type { FC } from 'react'
+import { Icon } from '@iconify/react'
+import { notification } from 'antd'
+import { AnimatePresence } from 'framer-motion'
+import { debounce } from 'lodash'
+import { useCallback, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router'
 import {
   addWorkViewAPI,
   getUserSimpleAPI,
@@ -18,13 +25,6 @@ import WorkInfo from '@/components/work-detail/work-info'
 import { useAtBottom, useAtTop } from '@/hooks'
 import { decreaseFollowNum, increaseFollowNum } from '@/store/modules/user'
 import { resetUserList, setWorkDetailUserId } from '@/store/modules/viewList'
-import { Icon } from '@iconify/react'
-import { notification } from 'antd'
-import { AnimatePresence } from 'framer-motion'
-import { debounce } from 'lodash'
-import { useCallback, useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router'
 
 const ScrollButtons: FC = () => {
   const isBottom = useAtBottom()

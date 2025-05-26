@@ -1,13 +1,13 @@
 import type { FC } from 'react'
+import { use, useEffect, useState } from 'react'
 import { getUserWorksTotalAPI } from '@/apis'
 import LabelList from '@/components/personal-center/label-list'
 import WorkList from '@/components/personal-center/work-list'
-import { useContext, useEffect, useState } from 'react'
 
 import { PersonalContext } from '..'
 
 const MyWorks: FC = () => {
-  const { userId } = useContext(PersonalContext)
+  const { userId } = use(PersonalContext)
 
   const [workCount, setWorkCount] = useState<number>(0)
 

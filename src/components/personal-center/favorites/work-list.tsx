@@ -1,7 +1,12 @@
-import type { AppState } from '@/store/types'
-import type { WorkNormalItemInfo } from '@/utils/types'
 import type { RadioChangeEvent } from 'antd'
 import type { FC } from 'react'
+import type { AppState } from '@/store/types'
+import type { WorkNormalItemInfo } from '@/utils/types'
+import { ExclamationCircleFilled } from '@ant-design/icons'
+import { Button, Input, message, Modal, Radio } from 'antd'
+import { use, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useLocation, useNavigate, useSearchParams } from 'react-router'
 import {
   copyFavoriteWorksAPI,
   favoriteActionsAPI,
@@ -20,11 +25,6 @@ import {
   setCurrentList,
   setPrevPosition,
 } from '@/store/modules/viewList'
-import { ExclamationCircleFilled } from '@ant-design/icons'
-import { Button, Input, message, Modal, Radio } from 'antd'
-import { useContext, useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useLocation, useNavigate, useSearchParams } from 'react-router'
 
 const { Search } = Input
 
@@ -57,7 +57,7 @@ const WorkList: FC<WorkListProps> = ({
 }) => {
   const navigate = useNavigate()
   const location = useLocation()
-  const { isMe } = useContext(PersonalContext)
+  const { isMe } = use(PersonalContext)
 
   const [messageApi, msgContextHolder] = message.useMessage()
 

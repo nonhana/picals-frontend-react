@@ -1,8 +1,8 @@
 import type { FC } from 'react'
-import AnimatedDiv from '@/components/motion/animated-div'
-import ImgLoadingSkeleton from '@/components/skeleton/img-loading'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import AnimatedDiv from '@/components/motion/animated-div'
+import ImgLoadingSkeleton from '@/components/skeleton/img-loading'
 
 type LazyImgProps = {
   width?: number | string

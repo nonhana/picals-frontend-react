@@ -1,5 +1,8 @@
-import type { WorkNormalItem } from '@/apis/types'
 import type { FC } from 'react'
+import type { WorkNormalItem } from '@/apis/types'
+import { useEffect, useRef, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useLocation, useNavigate, useParams } from 'react-router'
 import { getIllustratorWorksIdListAPI, getIllustratorWorksInPagesAPI } from '@/apis'
 import { useAtBottom } from '@/hooks'
 import {
@@ -8,9 +11,6 @@ import {
   setCurrentList,
   setPrevPosition,
 } from '@/store/modules/viewList'
-import { useEffect, useRef, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useLocation, useNavigate, useParams } from 'react-router'
 
 import WaterfallItem from '../common/waterfall-item'
 

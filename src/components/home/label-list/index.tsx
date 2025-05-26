@@ -1,5 +1,5 @@
-import type { LabelInfo } from '@/utils/types'
 import type { FC } from 'react'
+import type { LabelInfo } from '@/utils/types'
 import Empty from '@/components/common/empty'
 import LabelItem from '@/components/common/label-item'
 import LayoutList from '@/components/common/layout-list'

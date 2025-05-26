@@ -1,6 +1,6 @@
+import type { FC } from 'react'
 import type { AppState } from '@/store/types'
 import type { UserDetailInfo } from '@/utils/types'
-import type { FC } from 'react'
 import { Button } from 'antd'
 import { PhotoView } from 'react-photo-view'
 import { useSelector } from 'react-redux'

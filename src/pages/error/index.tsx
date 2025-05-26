@@ -1,9 +1,9 @@
 import type { FallbackProps } from 'react-error-boundary'
+import { Button } from 'antd'
+import { useNavigate } from 'react-router'
 import ErrorImg from '@/assets/imgs/500.png'
 import HanaCard from '@/components/common/hana-card'
 import LazyImg from '@/components/common/lazy-img'
-import { Button } from 'antd'
-import { useNavigate } from 'react-router'
 
 function Error({ error }: FallbackProps) {
   const navigate = useNavigate()

@@ -1,15 +1,15 @@
-import type { LabelInfo } from '@/utils/types'
 import type { FC } from 'react'
+import type { LabelInfo } from '@/utils/types'
+import { use, useEffect, useState } from 'react'
 import { getUserWorksLabelsAPI } from '@/apis'
 import Empty from '@/components/common/empty'
 import LabelItem from '@/components/common/label-item'
 import AnimatedDiv from '@/components/motion/animated-div'
 import LabelListSkeleton from '@/components/skeleton/label-list'
 import { PersonalContext } from '@/pages/personal-center'
-import { useContext, useEffect, useState } from 'react'
 
 const LabelList: FC = () => {
-  const { userId } = useContext(PersonalContext)
+  const { userId } = use(PersonalContext)
 
   const [labels, setLabels] = useState<LabelInfo[]>([])
   const [gettingLabels, setGettingLabels] = useState(true)

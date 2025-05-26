@@ -1,8 +1,6 @@
 import type { DragEndEvent } from '@dnd-kit/core'
 import type { UploadProps } from 'antd'
 import type { FC } from 'react'
-import HanaModal from '@/components/common/hana-modal'
-import HanaViewer from '@/components/common/hana-viewer'
 import { InboxOutlined } from '@ant-design/icons'
 import { DndContext, MouseSensor, useSensor, useSensors } from '@dnd-kit/core'
 import { restrictToParentElement } from '@dnd-kit/modifiers'
@@ -10,6 +8,8 @@ import { arrayMove, rectSortingStrategy, SortableContext } from '@dnd-kit/sortab
 import { message, notification, Progress, Upload } from 'antd'
 import axios from 'axios'
 import { useEffect, useRef, useState } from 'react'
+import HanaModal from '@/components/common/hana-modal'
+import HanaViewer from '@/components/common/hana-viewer'
 
 import DraggableImg from './draggable-img'
 

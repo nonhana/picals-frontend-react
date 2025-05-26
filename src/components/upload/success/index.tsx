@@ -1,11 +1,11 @@
 import type { FC } from 'react'
+import { Button } from 'antd'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router'
 import uploadSuccessfully from '@/assets/imgs/upload-successfully.gif'
 import HanaCard from '@/components/common/hana-card'
 import LazyImg from '@/components/common/lazy-img'
 import { saveUploadSuccess } from '@/store/modules/uploadForm'
-import { Button } from 'antd'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router'
 
 interface UploadSuccessProps {
   workStatus: string | null

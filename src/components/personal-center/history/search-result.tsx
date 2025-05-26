@@ -1,13 +1,13 @@
-import type { HistoryItem } from '@/apis/types'
 import type { FC } from 'react'
+import type { HistoryItem } from '@/apis/types'
+import { Icon } from '@iconify/react'
+import dayjs from 'dayjs'
+import { useEffect, useState } from 'react'
 import { searchViewHistoryAPI } from '@/apis'
 import AnimatedList from '@/components/common/animated-list'
 import Empty from '@/components/common/empty'
 import AnimatedDiv from '@/components/motion/animated-div'
 import WorkListSkeleton from '@/components/skeleton/work-list'
-import { Icon } from '@iconify/react'
-import dayjs from 'dayjs'
-import { useEffect, useState } from 'react'
 
 interface SearchResultProps {
   keyword: string

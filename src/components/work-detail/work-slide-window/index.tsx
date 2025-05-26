@@ -1,8 +1,8 @@
 import type { VirtualListProps } from '@/components/common/virtual-list'
 import type { WorkNormalItemInfo } from '@/utils/types'
+import { useMemo } from 'react'
 import LayoutList from '@/components/common/layout-list'
 import ImgLoadingSkeleton from '@/components/skeleton/img-loading'
-import { useMemo } from 'react'
 
 interface WorkSlideWindowProps extends Partial<VirtualListProps> {
   workId: string

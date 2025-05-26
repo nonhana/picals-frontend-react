@@ -1,11 +1,11 @@
 import type { MenuProps } from 'antd'
 import type { FC } from 'react'
-import { PersonalContext } from '@/pages/personal-center'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { Icon } from '@iconify/react'
 import { Dropdown } from 'antd'
-import { useContext, useState } from 'react'
+import { use, useState } from 'react'
+import { PersonalContext } from '@/pages/personal-center'
 
 const dropdownList: MenuProps['items'] = [
   {
@@ -35,7 +35,7 @@ const FavoriteItem: FC<FavoriteItemProps> = ({
   onDeleteFolder,
   onEditFolder,
 }) => {
-  const { isMe } = useContext(PersonalContext)
+  const { isMe } = use(PersonalContext)
 
   const [hovering, setHovering] = useState(false)
 

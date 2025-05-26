@@ -1,5 +1,8 @@
-import type { WorkNormalItemInfo } from '@/utils/types'
 import type { FC } from 'react'
+import type { WorkNormalItemInfo } from '@/utils/types'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { useLocation } from 'react-router'
 import { likeActionsAPI } from '@/apis'
 import AnimatedList from '@/components/common/animated-list'
 import Empty from '@/components/common/empty'
@@ -12,9 +15,6 @@ import {
   setCurrentList,
   setPrevPosition,
 } from '@/store/modules/viewList'
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { useLocation } from 'react-router'
 
 interface RecommendedWorksProps {
   loading: boolean

@@ -1,5 +1,5 @@
-import type { AppState } from '@/store/types'
 import type { FC } from 'react'
+import type { AppState } from '@/store/types'
 import { message } from 'antd'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'

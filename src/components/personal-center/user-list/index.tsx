@@ -1,5 +1,8 @@
-import type { UserItemInfo } from '@/utils/types'
 import type { FC } from 'react'
+import type { UserItemInfo } from '@/utils/types'
+import { AnimatePresence } from 'framer-motion'
+import { use, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { getFansListAPI, getFollowingListAPI, likeActionsAPI, userActionsAPI } from '@/apis'
 import Empty from '@/components/common/empty'
 import Pagination from '@/components/common/pagination'
@@ -9,9 +12,6 @@ import UserListSkeleton from '@/components/skeleton/user-list'
 import { useMap } from '@/hooks'
 import { PersonalContext } from '@/pages/personal-center'
 import { decreaseFollowNum, increaseFollowNum } from '@/store/modules/user'
-import { AnimatePresence } from 'framer-motion'
-import { useContext, useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
 
 interface UserListProps {
   width: number
@@ -21,7 +21,7 @@ interface UserListProps {
 const UserList: FC<UserListProps> = ({ width, total }) => {
   const dispatch = useDispatch()
 
-  const { currentPath, userId } = useContext(PersonalContext)
+  const { currentPath, userId } = use(PersonalContext)
 
   const [userList, setUserList, updateUserList] = useMap<UserItemInfo>([]) // 用户列表
 
@@ -69,15 +69,15 @@ const UserList: FC<UserListProps> = ({ width, total }) => {
       const { data }
         = currentPath === 'follow'
           ? await getFollowingListAPI({
-            id: userId,
-            current,
-            pageSize,
-          })
+              id: userId,
+              current,
+              pageSize,
+            })
           : await getFansListAPI({
-            id: userId,
-            current,
-            pageSize,
-          })
+              id: userId,
+              current,
+              pageSize,
+            })
 
       setUserList(data)
     }

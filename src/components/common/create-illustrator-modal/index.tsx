@@ -1,6 +1,6 @@
-import type { INewIllustratorReq } from '@/apis/illustrator/types'
 import type { UploadProps } from 'antd'
 import type { FC } from 'react'
+import type { INewIllustratorReq } from '@/apis/illustrator/types'
 import { Icon } from '@iconify/react'
 import { Flex, Input, message, Modal, notification, Select, Upload } from 'antd'
 import { AnimatePresence, motion } from 'framer-motion'

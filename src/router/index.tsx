@@ -1,8 +1,8 @@
 import type { RouteObject } from 'react-router'
-import App from '@/app'
-import PersonalCenter from '@/pages/personal-center'
 import { lazy } from 'react'
 import { createBrowserRouter, Navigate } from 'react-router'
+import App from '@/app'
+import PersonalCenter from '@/pages/personal-center'
 
 import AuthRouter from './utils/auth-router'
 import AutoTop from './utils/auto-top'

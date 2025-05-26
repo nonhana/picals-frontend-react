@@ -1,12 +1,12 @@
 import type { FC } from 'react'
+import { use, useEffect, useState } from 'react'
 import { getFansTotalAPI } from '@/apis'
 import UserList from '@/components/personal-center/user-list'
-import { useContext, useEffect, useState } from 'react'
 
 import { PersonalContext } from '..'
 
 const MyFans: FC = () => {
-  const { userId, width } = useContext(PersonalContext)
+  const { userId, width } = use(PersonalContext)
 
   const [total, setTotal] = useState(0) // 用户总数
 

@@ -1,12 +1,5 @@
 import type { FormInstance, FormProps } from 'antd'
 import type { FC } from 'react'
-import { getUserFavoriteListAPI, loginAPI, registerAPI, sendEmailCodeAPI } from '@/apis'
-import logo from '@/assets/svgs/logo.svg'
-import GreyButton from '@/components/common/grey-button'
-import AnimatedDiv from '@/components/motion/animated-div'
-import { setFavoriteList } from '@/store/modules/favorites'
-import { setLikedLabels, setLoginStatus, setTempId, setUserInfo } from '@/store/modules/user'
-import { cn } from '@/utils'
 import { Icon } from '@iconify/react'
 import {
   Button,
@@ -20,6 +13,13 @@ import { AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
+import { getUserFavoriteListAPI, loginAPI, registerAPI, sendEmailCodeAPI } from '@/apis'
+import logo from '@/assets/svgs/logo.svg'
+import GreyButton from '@/components/common/grey-button'
+import AnimatedDiv from '@/components/motion/animated-div'
+import { setFavoriteList } from '@/store/modules/favorites'
+import { setLikedLabels, setLoginStatus, setTempId, setUserInfo } from '@/store/modules/user'
+import { cn } from '@/utils'
 
 // 登录表单
 interface LoginForm {

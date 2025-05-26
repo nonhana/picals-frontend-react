@@ -1,5 +1,8 @@
-import type { UserItemInfo } from '@/utils/types'
 import type { FC } from 'react'
+import type { UserItemInfo } from '@/utils/types'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { likeActionsAPI, searchUserAPI, searchUserTotalAPI, userActionsAPI } from '@/apis'
 import Empty from '@/components/common/empty'
 import Pagination from '@/components/common/pagination'
@@ -8,9 +11,6 @@ import AnimatedDiv from '@/components/motion/animated-div'
 import UserListSkeleton from '@/components/skeleton/user-list'
 import { useMap } from '@/hooks'
 import { decreaseFollowNum, increaseFollowNum } from '@/store/modules/user'
-import { AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
 
 interface UserListProps {
   width: number

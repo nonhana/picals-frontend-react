@@ -1,7 +1,10 @@
+import type { FC } from 'react'
 import type { Pagination } from '@/apis/types'
 import type { AppState } from '@/store/types'
 import type { WorkNormalItemInfo } from '@/utils/types'
-import type { FC } from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useLocation } from 'react-router'
 import { getRecommendWorksAPI, likeActionsAPI } from '@/apis'
 import AnimatedList from '@/components/common/animated-list'
 import WorkListSkeleton from '@/components/skeleton/work-list'
@@ -14,9 +17,6 @@ import {
   setPrevPosition,
 } from '@/store/modules/viewList'
 import { generateTempId } from '@/utils'
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useLocation } from 'react-router'
 
 const WorkList: FC = () => {
   const location = useLocation()

@@ -1,8 +1,8 @@
 import type { FC } from 'react'
-import { MAX_WIDTH, MIN_WIDTH, TRIGGER_MIN_WIDTH } from '@/utils'
 import { Fragment, useEffect, useState } from 'react'
 import ContentLoader from 'react-content-loader'
 import { useOutletContext } from 'react-router'
+import { MAX_WIDTH, MIN_WIDTH, TRIGGER_MIN_WIDTH } from '@/utils'
 
 interface WorkListSkeletonProps {
   heading?: {

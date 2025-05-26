@@ -1,6 +1,6 @@
 import type { FC } from 'react'
-import AnimatedDiv from '@/components/motion/animated-div'
 import { ProgressBar } from 'react-loader-spinner'
+import AnimatedDiv from '@/components/motion/animated-div'
 
 interface LoadingProps {
   loading: boolean

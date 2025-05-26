@@ -1,7 +1,12 @@
+import type { FC } from 'react'
 import type { Pagination } from '@/apis/types'
 import type { AppState } from '@/store/types'
 import type { WorkNormalItemInfo } from '@/utils/types'
-import type { FC } from 'react'
+import { Icon } from '@iconify/react'
+import { Button, InputNumber, message } from 'antd'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router'
 import {
   getLatestWorksAPI,
   getRecommendWorksAPI,
@@ -12,6 +17,7 @@ import PaginationComponent from '@/components/common/pagination'
 import WorkItem from '@/components/common/work-item'
 import AnimatedDiv from '@/components/motion/animated-div'
 import { setTempId } from '@/store/modules/user'
+
 import {
   pushToLatestWorkList,
   pushToRecommendWorkList,
@@ -21,12 +27,6 @@ import {
   setPrevWorkId,
 } from '@/store/modules/viewList'
 import { generateTempId, VIEW_LIST_ICON_MAP, VIEW_LIST_MAP } from '@/utils'
-import { Icon } from '@iconify/react'
-import { Button, InputNumber, message } from 'antd'
-import { useEffect, useState } from 'react'
-
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router'
 import WorkSlideWindow from '../work-slide-window'
 
 const viewListClasses

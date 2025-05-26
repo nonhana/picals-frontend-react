@@ -1,5 +1,8 @@
-import type { WorkNormalItemInfo } from '@/utils/types'
 import type { FC } from 'react'
+import type { WorkNormalItemInfo } from '@/utils/types'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useLocation } from 'react-router'
 import { getLatestWorksAPI, likeActionsAPI } from '@/apis'
 import AnimatedList from '@/components/common/animated-list'
 import WorkListSkeleton from '@/components/skeleton/work-list'
@@ -10,9 +13,6 @@ import {
   setCurrentList,
   setPrevPosition,
 } from '@/store/modules/viewList'
-import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useLocation } from 'react-router'
 
 const LatestList: FC = () => {
   const location = useLocation()

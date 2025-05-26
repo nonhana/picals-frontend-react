@@ -1,10 +1,10 @@
 import type { FC } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useOutletContext } from 'react-router'
 import { getFollowNewWorksTotalAPI } from '@/apis'
 import Pagination from '@/components/common/pagination'
 import MainList from '@/components/followed-new/main-list'
 import { MAX_WIDTH, MIN_WIDTH, TRIGGER_MIN_WIDTH } from '@/utils'
-import { useEffect, useRef, useState } from 'react'
-import { useOutletContext } from 'react-router'
 
 const FollowedNew: FC = () => {
   const [current, setCurrent] = useState(1)

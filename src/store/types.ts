@@ -1,7 +1,7 @@
-import type { LabelItem } from '@/apis/types'
-import type { FavoriteItemInfo, UploadWorkFormInfo, UserInfo } from '@/utils/types'
-
 import type { WorkListType } from './modules/viewList'
+import type { LabelItem } from '@/apis/types'
+
+import type { FavoriteItemInfo, UploadWorkFormInfo, UserInfo } from '@/utils/types'
 
 interface UserState {
   userInfo: UserInfo

@@ -1,5 +1,10 @@
-import type { HistoryItem } from '@/apis/types'
 import type { FC } from 'react'
+import type { HistoryItem } from '@/apis/types'
+import { Icon } from '@iconify/react'
+import dayjs from 'dayjs'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useLocation } from 'react-router'
 import { getViewHistoryAPI, getViewHistoryTotalAPI } from '@/apis'
 import AnimatedList from '@/components/common/animated-list'
 import Empty from '@/components/common/empty'
@@ -8,11 +13,6 @@ import Pagination from '@/components/common/pagination'
 import AnimatedDiv from '@/components/motion/animated-div'
 import WorkListSkeleton from '@/components/skeleton/work-list'
 import { resetOtherList, setCurrentList, setPrevPosition } from '@/store/modules/viewList'
-import { Icon } from '@iconify/react'
-import dayjs from 'dayjs'
-import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useLocation } from 'react-router'
 
 const HistoryList: FC = () => {
   const location = useLocation()

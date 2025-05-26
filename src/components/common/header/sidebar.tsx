@@ -1,5 +1,10 @@
-import type { AppState } from '@/store/types'
 import type { FC } from 'react'
+import type { AppState } from '@/store/types'
+import { Icon } from '@iconify/react'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Link, useLocation } from 'react-router'
 import logo from '@/assets/svgs/logo.svg'
 import AnimatedDiv from '@/components/motion/animated-div'
 import {
@@ -9,11 +14,6 @@ import {
   TRIGGER_MAX_WIDTH,
   TRIGGER_MIN_WIDTH,
 } from '@/utils/constants'
-import { Icon } from '@iconify/react'
-import { AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link, useLocation } from 'react-router'
 
 interface SidebarProps {
   width: number

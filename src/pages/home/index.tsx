@@ -1,7 +1,11 @@
+import type { FC } from 'react'
 import type { Pagination } from '@/apis/types'
 import type { AppState } from '@/store/types'
 import type { LabelInfo, WorkNormalItemInfo } from '@/utils/types'
-import type { FC } from 'react'
+import { Icon } from '@iconify/react'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useOutletContext } from 'react-router'
 import { getFollowNewWorksAPI, getRecommendLabelListAPI, getRecommendWorksAPI } from '@/apis'
 import GreyButton from '@/components/common/grey-button'
 import FollowedWorks from '@/components/home/followed-works'
@@ -9,10 +13,6 @@ import LabelList from '@/components/home/label-list/index'
 import RecommendedWorks from '@/components/home/recommended-works'
 import { setTempId } from '@/store/modules/user'
 import { generateTempId, MAX_WIDTH, MIN_WIDTH, TRIGGER_MIN_WIDTH } from '@/utils'
-import { Icon } from '@iconify/react'
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useOutletContext } from 'react-router'
 
 const Home: FC = () => {
   const dispatch = useDispatch()

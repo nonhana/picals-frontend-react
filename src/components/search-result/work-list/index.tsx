@@ -1,6 +1,11 @@
-import type { WorkNormalItemInfo } from '@/utils/types'
 import type { RadioChangeEvent } from 'antd'
 import type { FC } from 'react'
+import type { WorkNormalItemInfo } from '@/utils/types'
+import { Radio } from 'antd'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useLocation, useNavigate } from 'react-router'
 import { likeActionsAPI, searchWorksByLabelAPI, searchWorksIdListAPI } from '@/apis'
 import AnimatedList from '@/components/common/animated-list'
 import Empty from '@/components/common/empty'
@@ -14,11 +19,6 @@ import {
   setCurrentList,
   setPrevPosition,
 } from '@/store/modules/viewList'
-import { Radio } from 'antd'
-import { AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useLocation, useNavigate } from 'react-router'
 
 const sortOptions = [
   { label: '按最新排序', value: 'new' },

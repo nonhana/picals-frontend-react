@@ -1,6 +1,6 @@
+import type { FC } from 'react'
 import type { HistoryItem } from '@/apis/types'
 import type { WorkNormalItemInfo } from '@/utils/types'
-import type { FC } from 'react'
 import { useEffect, useRef } from 'react'
 
 import WorkItem from '../work-item'

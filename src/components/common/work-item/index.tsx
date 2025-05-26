@@ -1,20 +1,20 @@
-import type { HistoryItem } from '@/apis/types'
-import type { AppState } from '@/store/types'
-import type { WorkNormalItemInfo } from '@/utils/types'
 import type { MenuProps } from 'antd'
 import type { MotionProps } from 'framer-motion'
 import type { WorkItemProps, WorkItemType } from './types'
-import { getAnimationVariant } from '@/components/motion/preset'
-import { useFloat } from '@/hooks'
-import { PersonalContext } from '@/pages/personal-center'
-import { FLOAT_DURATION, WORKITEM_DROPDOWN_LIST } from '@/utils'
+import type { HistoryItem } from '@/apis/types'
+import type { AppState } from '@/store/types'
+import type { WorkNormalItemInfo } from '@/utils/types'
 import { Icon } from '@iconify/react'
 import { Dropdown, Modal } from 'antd'
 import { motion } from 'framer-motion'
-import { useContext } from 'react'
-
+import { use } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router'
+import { getAnimationVariant } from '@/components/motion/preset'
+
+import { useFloat } from '@/hooks'
+import { PersonalContext } from '@/pages/personal-center'
+import { FLOAT_DURATION, WORKITEM_DROPDOWN_LIST } from '@/utils'
 import LazyImg from '../lazy-img'
 
 const normalWrapper = 'w-184px'
@@ -93,7 +93,7 @@ function WorkItem(props: WorkItemProps & { index?: number }) {
 
   const { workId } = useParams<{ workId: string }>()
   const navigate = useNavigate()
-  const { userId, currentPath, isMe } = useContext(PersonalContext)
+  const { userId, currentPath, isMe } = use(PersonalContext)
 
   const { isLogin } = useSelector((state: AppState) => state.user)
   const { id: localUserId } = useSelector((state: AppState) => state.user.userInfo)

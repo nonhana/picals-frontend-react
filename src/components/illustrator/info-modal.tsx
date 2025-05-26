@@ -1,5 +1,5 @@
-import type { IllustratorInfo } from '@/apis/illustrator/types'
 import type { FC } from 'react'
+import type { IllustratorInfo } from '@/apis/illustrator/types'
 import { useEffect, useState } from 'react'
 import { PhotoView } from 'react-photo-view'
 import { Link } from 'react-router'

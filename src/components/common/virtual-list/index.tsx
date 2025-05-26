@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
-import { cn } from '@/utils'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { cn } from '@/utils'
 
 export interface VirtualListProps {
   direction: 'vertical' | 'horizontal'

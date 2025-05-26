@@ -1,10 +1,10 @@
+import type { FC } from 'react'
 import type { AppState } from '@/store/types'
 import type { UserItemInfo } from '@/utils/types'
-import type { FC } from 'react'
-import { MAX_WIDTH } from '@/utils'
 import { Button } from 'antd'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router'
+import { MAX_WIDTH } from '@/utils'
 
 import Empty from '../empty'
 import LazyImg from '../lazy-img'

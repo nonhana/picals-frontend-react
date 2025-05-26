@@ -1,5 +1,10 @@
-import type { WorkNormalItemInfo } from '@/utils/types'
 import type { FC } from 'react'
+import type { WorkNormalItemInfo } from '@/utils/types'
+import { message } from 'antd'
+import { AnimatePresence } from 'framer-motion'
+import { use, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useLocation } from 'react-router'
 import {
   deleteWorkAPI,
   getUserLikeWorksAPI,
@@ -20,11 +25,6 @@ import {
   setCurrentList,
   setPrevPosition,
 } from '@/store/modules/viewList'
-import { message } from 'antd'
-import { AnimatePresence } from 'framer-motion'
-import { useContext, useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useLocation } from 'react-router'
 
 interface WorkListProps {
   workCount: number
@@ -36,7 +36,7 @@ const WorkList: FC<WorkListProps> = ({ workCount, getWorkCount }) => {
 
   const dispatch = useDispatch()
 
-  const { userId, currentPath } = useContext(PersonalContext)
+  const { userId, currentPath } = use(PersonalContext)
 
   const [current, setCurrent] = useState<number>(1)
   const [workList, setWorkList, setWorkMap] = useMap<WorkNormalItemInfo>([])

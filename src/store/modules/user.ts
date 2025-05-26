@@ -1,7 +1,7 @@
 import type { LabelItem } from '@/apis/types'
 import type { UserInfo } from '@/utils/types'
-import { generateTempId } from '@/utils'
 import { createSlice } from '@reduxjs/toolkit'
+import { generateTempId } from '@/utils'
 
 const userStore = createSlice({
   name: 'user',

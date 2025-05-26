@@ -1,7 +1,7 @@
 import type { FC } from 'react'
+import { BrowserView } from 'react-device-detect'
 import BgSlide from '@/components/login/bg-slide'
 import LoginWindow from '@/components/login/login-window'
-import { BrowserView } from 'react-device-detect'
 
 const Login: FC = () => {
   return (

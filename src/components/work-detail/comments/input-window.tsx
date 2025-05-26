@@ -1,10 +1,10 @@
-import type { AppState } from '@/store/types'
 import type { FC } from 'react'
-import LazyImg from '@/components/common/lazy-img'
-import AnimatedDiv from '@/components/motion/animated-div'
+import type { AppState } from '@/store/types'
 import { Button, Input } from 'antd'
 import { AnimatePresence } from 'framer-motion'
 import { useSelector } from 'react-redux'
+import LazyImg from '@/components/common/lazy-img'
+import AnimatedDiv from '@/components/motion/animated-div'
 
 interface Replying {
   id: string

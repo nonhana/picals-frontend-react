@@ -1,5 +1,8 @@
-import type { FavoriteDetailInfo, FavoriteItemInfo, WorkNormalItemInfo } from '@/utils/types'
 import type { FC } from 'react'
+import type { FavoriteDetailInfo, FavoriteItemInfo, WorkNormalItemInfo } from '@/utils/types'
+import { use, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useSearchParams } from 'react-router'
 import {
   getFavoriteDetailAPI,
   getFavoriteWorkListAPI,
@@ -13,14 +16,11 @@ import Header from '@/components/personal-center/favorites/header'
 import Sidebar from '@/components/personal-center/favorites/sidebar'
 import WorkList from '@/components/personal-center/favorites/work-list'
 import { setFavoriteList } from '@/store/modules/favorites'
-import { useContext, useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useSearchParams } from 'react-router'
 
 import { PersonalContext } from '..'
 
 const MyFavorites: FC = () => {
-  const { isMe, userId } = useContext(PersonalContext)
+  const { isMe, userId } = use(PersonalContext)
 
   const dispatch = useDispatch()
 

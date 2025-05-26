@@ -1,8 +1,6 @@
-import type { AppState } from '@/store/types'
 import type { MenuProps } from 'antd'
 import type { FC } from 'react'
-import Header from '@/components/personal-center/header'
-import { MAX_WIDTH, MIN_WIDTH, TRIGGER_MIN_WIDTH } from '@/utils'
+import type { AppState } from '@/store/types'
 import {
   HeartOutlined,
   HistoryOutlined,
@@ -15,6 +13,8 @@ import { Menu } from 'antd'
 import { createContext, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Outlet, useLocation, useNavigate, useOutletContext, useParams } from 'react-router'
+import Header from '@/components/personal-center/header'
+import { MAX_WIDTH, MIN_WIDTH, TRIGGER_MIN_WIDTH } from '@/utils'
 
 const PersonalContext = createContext({ isMe: false, currentPath: '', userId: '', width: 0 })
 

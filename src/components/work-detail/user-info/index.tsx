@@ -1,10 +1,10 @@
+import type { FC } from 'react'
 import type { AppState } from '@/store/types'
 import type { UserItemInfo } from '@/utils/types'
-import type { FC } from 'react'
-import LazyImg from '@/components/common/lazy-img'
 import { Button } from 'antd'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router'
+import LazyImg from '@/components/common/lazy-img'
 
 interface UserInfoProps {
   userInfo: UserItemInfo

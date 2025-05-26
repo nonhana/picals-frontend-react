@@ -1,7 +1,10 @@
+import type { FC } from 'react'
 import type { Pagination } from '@/apis/types'
 import type { AppState } from '@/store/types'
 import type { UserItemInfo } from '@/utils/types'
-import type { FC } from 'react'
+import { message } from 'antd'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { getRecommendUserListAPI, likeActionsAPI, userActionsAPI } from '@/apis'
 import UserItem from '@/components/common/user-item'
 import AnimatedDiv from '@/components/motion/animated-div'
@@ -9,9 +12,6 @@ import UserListSkeleton from '@/components/skeleton/user-list'
 import { useAtBottom } from '@/hooks'
 import { decreaseFollowNum, increaseFollowNum, setTempId } from '@/store/modules/user'
 import { generateTempId } from '@/utils'
-import { message } from 'antd'
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 
 interface UserListProps {
   width: number

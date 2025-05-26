@@ -1,13 +1,13 @@
 import type { MenuProps } from 'antd'
 import type { FC } from 'react'
-import LatestList from '@/components/explore/latest-list'
-import UserList from '@/components/explore/user-list'
-import WorkList from '@/components/explore/work-list'
-import { MAX_WIDTH, MIN_WIDTH, TRIGGER_MIN_WIDTH } from '@/utils'
 import { ClockCircleOutlined, PictureOutlined, UserOutlined } from '@ant-design/icons'
 import { Menu } from 'antd'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useOutletContext, useParams } from 'react-router'
+import LatestList from '@/components/explore/latest-list'
+import UserList from '@/components/explore/user-list'
+import WorkList from '@/components/explore/work-list'
+import { MAX_WIDTH, MIN_WIDTH, TRIGGER_MIN_WIDTH } from '@/utils'
 
 const items: MenuProps['items'] = [
   {

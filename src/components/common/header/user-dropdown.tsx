@@ -1,16 +1,16 @@
-import type { AppState } from '@/store/types'
 import type { FC } from 'react'
-import AnimatedDiv from '@/components/motion/animated-div'
-import { reset } from '@/store/modules/favorites'
-import { clear } from '@/store/modules/searchHistory'
-import { logout } from '@/store/modules/user'
-import { HEADER_DROPDOWN_LIST } from '@/utils/constants'
+import type { AppState } from '@/store/types'
 import { message, Modal } from 'antd'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
 import { Link, useNavigate } from 'react-router'
+import AnimatedDiv from '@/components/motion/animated-div'
+import { reset } from '@/store/modules/favorites'
+import { clear } from '@/store/modules/searchHistory'
+import { logout } from '@/store/modules/user'
+
+import { HEADER_DROPDOWN_LIST } from '@/utils/constants'
 import LazyImg from '../lazy-img'
 
 const UserDropdown: FC<{

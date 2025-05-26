@@ -1,6 +1,9 @@
+import type { FC } from 'react'
 import type { AppState } from '@/store/types'
 import type { WorkNormalItemInfo } from '@/utils/types'
-import type { FC } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { getFollowNewWorksIdListAPI, likeActionsAPI } from '@/apis'
 import Empty from '@/components/common/empty'
 import LayoutList from '@/components/common/layout-list'
@@ -14,9 +17,6 @@ import {
   setCurrentList,
   setPrevPosition,
 } from '@/store/modules/viewList'
-import { AnimatePresence } from 'framer-motion'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 
 interface FollowedWorksProps {
   loading: boolean

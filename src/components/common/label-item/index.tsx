@@ -1,6 +1,6 @@
 import type { FC } from 'react'
-import { isWarmHue } from '@/utils'
 import { Link } from 'react-router'
+import { isWarmHue } from '@/utils'
 
 interface LabelItemProps {
   id: string

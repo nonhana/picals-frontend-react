@@ -1,11 +1,11 @@
 import type { FC } from 'react'
-import { PersonalContext } from '@/pages/personal-center'
 import { message } from 'antd'
-import { useContext, useEffect } from 'react'
+import { use, useEffect } from 'react'
 import { useNavigate } from 'react-router'
+import { PersonalContext } from '@/pages/personal-center'
 
 const PersonalPage: FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { isMe } = useContext(PersonalContext)
+  const { isMe } = use(PersonalContext)
   const navigate = useNavigate()
 
   useEffect(() => {

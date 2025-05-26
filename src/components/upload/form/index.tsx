@@ -1,7 +1,11 @@
-import type { INewIllustratorReq } from '@/apis/illustrator/types'
-import type { UploadWorkFormInfo } from '@/utils/types'
 import type { FormProps, SelectProps } from 'antd'
 import type { FC } from 'react'
+import type { INewIllustratorReq } from '@/apis/illustrator/types'
+import type { UploadWorkFormInfo } from '@/utils/types'
+import { ExclamationCircleOutlined } from '@ant-design/icons'
+import { Button, Flex, Form, Input, message, Modal, Radio, Select, Spin } from 'antd'
+import { debounce } from 'lodash'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   getIllustratorDetailAPI,
   getIllustratorListInPagesAPI,
@@ -13,10 +17,6 @@ import {
 } from '@/apis'
 import CreateIllustratorModal from '@/components/common/create-illustrator-modal'
 import Empty from '@/components/common/empty'
-import { ExclamationCircleOutlined } from '@ant-design/icons'
-import { Button, Flex, Form, Input, message, Modal, Radio, Select, Spin } from 'antd'
-import { debounce } from 'lodash'
-import { useEffect, useMemo, useRef, useState } from 'react'
 
 interface SelectableItemInfo {
   value: string

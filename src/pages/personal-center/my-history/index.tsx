@@ -1,8 +1,8 @@
 import type { FC } from 'react'
-import HistoryList from '@/components/personal-center/history/history-list'
-import SearchResult from '@/components/personal-center/history/search-result'
 import { Button, Input, message } from 'antd'
 import { useEffect, useState } from 'react'
+import HistoryList from '@/components/personal-center/history/history-list'
+import SearchResult from '@/components/personal-center/history/search-result'
 
 const { Search } = Input
 

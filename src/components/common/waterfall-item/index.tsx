@@ -1,10 +1,10 @@
-import type { WorkNormalItem } from '@/apis/types'
 import type { FC } from 'react'
-import AnimatedDiv from '@/components/motion/animated-div'
+import type { WorkNormalItem } from '@/apis/types'
 import { AnimatePresence } from 'framer-motion'
-
 import { useState } from 'react'
+
 import { Link } from 'react-router'
+import AnimatedDiv from '@/components/motion/animated-div'
 import LazyImg from '../lazy-img'
 
 interface WaterfallItemProps {

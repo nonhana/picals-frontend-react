@@ -1,6 +1,14 @@
-import type { FavoriteFormInfo, FavoriteItemInfo } from '@/utils/types'
 import type { DragEndEvent, DragMoveEvent } from '@dnd-kit/core'
 import type { FC } from 'react'
+import type { FavoriteFormInfo, FavoriteItemInfo } from '@/utils/types'
+import { DndContext } from '@dnd-kit/core'
+import { restrictToParentElement } from '@dnd-kit/modifiers'
+import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
+import { Icon } from '@iconify/react'
+import { message, Modal } from 'antd'
+import { use, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate, useSearchParams } from 'react-router'
 import { changeFavoriteOrderAPI, deleteFavoriteAPI, editFavoriteAPI, newFavoriteAPI } from '@/apis'
 import CreateFolderModal from '@/components/common/create-folder-modal'
 import Empty from '@/components/common/empty'
@@ -9,14 +17,6 @@ import AnimatedDiv from '@/components/motion/animated-div'
 import FavoriteListSkeleton from '@/components/skeleton/favorite-list'
 import { PersonalContext } from '@/pages/personal-center'
 import { setFavoriteList } from '@/store/modules/favorites'
-import { DndContext } from '@dnd-kit/core'
-import { restrictToParentElement } from '@dnd-kit/modifiers'
-import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
-import { Icon } from '@iconify/react'
-import { message, Modal } from 'antd'
-import { useContext, useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useNavigate, useSearchParams } from 'react-router'
 
 // 获取拖动元素的索引
 function getMoveIndex(array: FavoriteItemInfo[], dragItem: DragMoveEvent) {
@@ -49,7 +49,7 @@ interface SidebarProps {
 const Sidebar: FC<SidebarProps> = ({ loading, folderList, setFolderList, fetchFavoriteList }) => {
   const dispatch = useDispatch()
 
-  const { isMe, userId } = useContext(PersonalContext)
+  const { isMe, userId } = use(PersonalContext)
   const [messageApi, msgContextHolder] = message.useMessage()
 
   const [searchParams] = useSearchParams()

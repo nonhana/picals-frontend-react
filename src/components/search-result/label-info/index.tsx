@@ -1,6 +1,10 @@
+import type { FC } from 'react'
 import type { AppState } from '@/store/types'
 import type { LabelDetailInfo, LabelInfo as LabelInfoType } from '@/utils/types'
-import type { FC } from 'react'
+import { Button } from 'antd'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { getRecommendLabelListAPI, labelActionsAPI } from '@/apis'
 import Empty from '@/components/common/empty'
 import LabelItem from '@/components/common/label-item'
@@ -10,10 +14,6 @@ import AnimatedDiv from '@/components/motion/animated-div'
 import LabelListSkeleton from '@/components/skeleton/label-list'
 import { addLikedLabel, removeLikedLabel } from '@/store/modules/user'
 import { isWarmHue } from '@/utils'
-import { Button } from 'antd'
-import { AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 
 type LabelInfoProps = LabelDetailInfo & {
   like: () => void

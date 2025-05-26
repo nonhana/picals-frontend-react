@@ -1,6 +1,10 @@
+import type { FC } from 'react'
 import type { AppState } from '@/store/types'
 import type { WorkNormalItemInfo } from '@/utils/types'
-import type { FC } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useLocation } from 'react-router'
 import { getFollowNewWorksAPI, getFollowNewWorksIdListAPI, likeActionsAPI } from '@/apis'
 import AnimatedList from '@/components/common/animated-list'
 import Empty from '@/components/common/empty'
@@ -13,10 +17,6 @@ import {
   setCurrentList,
   setPrevPosition,
 } from '@/store/modules/viewList'
-import { AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useLocation } from 'react-router'
 
 interface MainListProps {
   pageSize: number

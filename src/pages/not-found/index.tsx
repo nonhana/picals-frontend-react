@@ -1,9 +1,9 @@
 import type { FC } from 'react'
+import { Button } from 'antd'
+import { useNavigate } from 'react-router'
 import notFound from '@/assets/imgs/404.png'
 import HanaCard from '@/components/common/hana-card'
 import LazyImg from '@/components/common/lazy-img'
-import { Button } from 'antd'
-import { useNavigate } from 'react-router'
 
 const NotFound: FC = () => {
   const navigate = useNavigate()
