@@ -42,10 +42,8 @@ export default defineConfig(({ mode }) => {
       }),
       viteCompression({
         verbose: true,
-        disable: false,
         threshold: 10240,
-        algorithm: 'brotliCompress',
-        deleteOriginFile: true,
+        algorithm: 'gzip',
       }),
     ],
     build: {
